@@ -1,0 +1,77 @@
+html,body {
+  background: white;
+  color: #001f3f;
+  font-weight: 400;
+  font-family: 'Pacifico', cursive, serif;
+}
+
+/*
+ * Three-column layout by default.
+ */
+#container {
+  width: 966px;
+  margin: 0 auto;
+}
+
+header {
+  margin: 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f012be;
+}
+
+header h1 {
+  font-size: 2em;
+  line-height: 1;
+  text-align: left;
+}
+
+header p {
+  margin-top: -22px;
+  text-align: right;
+}
+
+#photos img {
+  margin-bottom: 2px;
+}
+
+/*
+ * Dual-column layout for smaller screens (e.g. tablet).
+ */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  #container {
+    width: 644px;
+  }
+
+  .fancybox-nav span {
+    visibility: visible;
+  }
+}
+
+/*
+ * Single-column layout for smallest screens (e.g. mobile).
+ */
+@media only screen and (max-device-width: 480px) {
+  #container {
+    width: 100%;
+  }
+
+  header {
+    margin-left: 5px;
+    margin-right: 5px;
+    overflow-x: hidden;
+  }
+
+  header p {
+    margin-top: 10px;
+    text-align: left;
+  }
+
+  #photos {
+    width: 320px;
+    margin: 0 auto;
+  }
+
+  #photos img {
+    margin-bottom: 5px;
+  }
+}
