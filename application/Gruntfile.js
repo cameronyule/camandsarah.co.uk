@@ -37,6 +37,20 @@ module.exports = function(grunt) {
       }
     },
 
+    copy: {
+      fancybox: {
+        files: [
+          {
+            expand:                 true,
+            flatten:                true,
+            src:                    ['bower_components/fancybox/source/*.{gif,png}'],
+            dest:                   'dist/',
+            filter:                 'isFile'
+          },
+        ]
+      }
+    },
+
     cssmin: {
       combine: {
         files: {
@@ -139,9 +153,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-responsive-images');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask('build', ['requirejs', 'cssmin']);
+  grunt.registerTask('build', ['requirejs', 'cssmin', 'copy']);
   grunt.registerTask('default', ['build']);
 };
