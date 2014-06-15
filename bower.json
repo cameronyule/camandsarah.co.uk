@@ -7,6 +7,7 @@
     "jquery": "~2.1.1",
     "jquery.lazyload": "~1.9.3",
     "fancybox": "~2.1.5",
-    "masonry": "~3.1.5"
+    "masonry": "~3.1.5",
+    "almond": "~0.2.9"
   }
 }
