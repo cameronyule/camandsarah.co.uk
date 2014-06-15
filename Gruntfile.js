@@ -2,6 +2,21 @@ module.exports = function(grunt) {
   'use strict';
 
   grunt.initConfig({
+    watch: {
+      application: {
+        files: [
+          "assets/javascripts/*.js",
+          "assets/stylesheets/*.css",
+        ],
+        tasks: ["requirejs"],
+      },
+      original_photos: {
+        files: [
+          "assets/photos/originals/*.jpg",
+        ],
+        tasks: ["responsive_images", "photo_database"],
+      }
+    },
 
     requirejs: {
       compile: {
@@ -108,7 +123,10 @@ module.exports = function(grunt) {
     async.series(series, done);
   });
 
-  grunt.loadNpmTasks("grunt-contrib-connect");
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks('grunt-responsive-images');
+  grunt.loadNpmTasks("grunt-contrib-connect");
+
+  grunt.registerTask("default", ["connect"]);
 };
