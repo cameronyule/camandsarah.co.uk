@@ -5,34 +5,34 @@ module.exports = function(grunt) {
     watch: {
       application: {
         files: [
-          "assets/javascripts/*.js",
-          "assets/stylesheets/*.css",
-          "index.html",
+          'assets/javascripts/*.js',
+          'assets/stylesheets/*.css',
+          'index.html',
         ],
-        tasks: ["build"],
+        tasks: ['build'],
       },
       original_photos: {
         files: [
-          "assets/photos/originals/*.jpg",
+          'assets/photos/originals/*.jpg',
         ],
-        tasks: ["responsive_images", "photo_database"],
+        tasks: ['responsive_images', 'photo_database'],
       }
     },
 
     requirejs: {
       compile: {
         options: {
-          baseUrl:                  "bower_components/",
-          name:                     "almond/almond",
-          mainConfigFile:           "assets/javascripts/application.js",
-          include:                  ["../assets/javascripts/application"],
-          insertRequire:            ["../assets/javascripts/application"],
-          optimize:                 "uglify2",
+          baseUrl:                  'bower_components/',
+          name:                     'almond/almond',
+          mainConfigFile:           'assets/javascripts/application.js',
+          include:                  ['../assets/javascripts/application'],
+          insertRequire:            ['../assets/javascripts/application'],
+          optimize:                 'uglify2',
           wrap:                     true,
           generateSourceMaps:       false,
           preserveLicenseComments:  false,
           useStrict:                true,
-          out:                      "dist/optimized.js",
+          out:                      'dist/optimized.js',
         }
       }
     },
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 8000,
-          base: ".",
+          base: '.',
           keepalive: true
         }
       }
@@ -139,9 +139,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-responsive-images');
-  grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.loadNpmTasks("grunt-contrib-connect");
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask("build", ["requirejs", "cssmin"]);
-  grunt.registerTask("default", ["build"]);
+  grunt.registerTask('build', ['requirejs', 'cssmin']);
+  grunt.registerTask('default', ['build']);
 };

@@ -1,5 +1,6 @@
 .DS_Store
-bower_components
-node_modules
-assets/data/*
-assets/photos/**/*
+application/bower_components
+application/dist
+application/node_modules
+application/assets/data/*
+application/assets/photos/**/*
