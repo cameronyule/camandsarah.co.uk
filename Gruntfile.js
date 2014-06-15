@@ -7,8 +7,9 @@ module.exports = function(grunt) {
         files: [
           "assets/javascripts/*.js",
           "assets/stylesheets/*.css",
+          "index.html",
         ],
-        tasks: ["requirejs"],
+        tasks: ["build"],
       },
       original_photos: {
         files: [
@@ -32,6 +33,18 @@ module.exports = function(grunt) {
           preserveLicenseComments:  false,
           useStrict:                true,
           out:                      "dist/optimized.js",
+        }
+      }
+    },
+
+    cssmin: {
+      combine: {
+        files: {
+          'dist/optimized.css': [
+            'assets/stylesheets/reset.css',
+            'bower_components/fancybox/source/jquery.fancybox.css',
+            'assets/stylesheets/application.css',
+          ]
         }
       }
     },
@@ -124,9 +137,11 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-requirejs');
-  grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-responsive-images');
+  grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-contrib-connect");
 
-  grunt.registerTask("default", ["connect"]);
+  grunt.registerTask("build", ["requirejs", "cssmin"]);
+  grunt.registerTask("default", ["build"]);
 };
