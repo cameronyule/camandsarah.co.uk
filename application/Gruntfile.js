@@ -77,9 +77,24 @@ module.exports = function(grunt) {
       resize: {
         files: [{
           expand:       true,
-          src:          ['assets/photos/originals/**.jpg'],
+          src:          ['assets/photos/originals/*.jpg'],
           custom_dest:  'assets/photos/{%= name %}/'
         }]
+      }
+    },
+
+    imageoptim: {
+      optimise: {
+        options: {
+          jpegMini:   true,
+          imageAlpha: false,
+          quitAfter:  true
+        },
+        src: [
+          'assets/photos/small/*.jpg',
+          'assets/photos/medium/*.jpg',
+          'assets/photos/large/*.jpg'
+        ]
       }
     },
 
@@ -154,6 +169,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-responsive-images');
+  grunt.loadNpmTasks('grunt-imageoptim');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-s3');
