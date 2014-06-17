@@ -83,7 +83,7 @@ require(['jquery', 'masonry', 'lazyload', 'fancybox', 'bind'], function($, Mason
 
   Application.prototype.initialiseLazyLoad = function() {
     $('#photos img.lazy').lazyload({
-      threshold : 200,
+      threshold : 200
     });
 
     this.initialiseFancyBox();
