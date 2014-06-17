@@ -1,13 +1,14 @@
 require.config({
   paths: {
-    jquery:                 "jquery/dist/jquery",
-    lazyload:               "jquery.lazyload/jquery.lazyload",
-    masonry:                "masonry/masonry",
-    fancybox:               "fancybox/source/jquery.fancybox"
+    jquery:                 'jquery/dist/jquery',
+    lazyload:               'jquery.lazyload/jquery.lazyload',
+    masonry:                'masonry/masonry',
+    fancybox:               'fancybox/source/jquery.fancybox',
+    bind:                   '../assets/javascripts/function.bind.polyfill'
   }
 });
 
-require(["jquery", "lazyload", "masonry", "fancybox"], function($, lazyload, Masonry, fancybox) {
+require(['jquery', 'masonry', 'lazyload', 'fancybox', 'bind'], function($, Masonry) {
 
   function Application() {
     this.isSmallScreenDevice = false;
@@ -18,12 +19,12 @@ require(["jquery", "lazyload", "masonry", "fancybox"], function($, lazyload, Mas
 
   Application.prototype.checkSmallScreen = function() {
     if (window.matchMedia) {
-      this.isSmallScreenDevice = window.matchMedia("only screen and (max-width: 480px)").matches;
+      this.isSmallScreenDevice = window.matchMedia('only screen and (max-width: 480px)').matches;
     }
   }
 
   Application.prototype.loadPhotoDatabase = function() {
-    $.getJSON("assets/data/photos.json", this.onPhotoDatabaseLoaded.bind(this));
+    $.getJSON('assets/data/photos.json', this.onPhotoDatabaseLoaded.bind(this));
   }
 
   Application.prototype.onPhotoDatabaseLoaded = function(data) {
@@ -31,7 +32,7 @@ require(["jquery", "lazyload", "masonry", "fancybox"], function($, lazyload, Mas
   }
 
   Application.prototype.createPhotoElements = function(photos) {
-    var photoContainer = $("#photos");
+    var photoContainer = $('#photos');
     var that = this;
 
     $.each(photos, function(i, photo){
@@ -46,7 +47,7 @@ require(["jquery", "lazyload", "masonry", "fancybox"], function($, lazyload, Mas
   }
 
   Application.prototype.createAnchorElement = function(photo) {
-    var anchor = document.createElement("a");
+    var anchor = document.createElement('a');
     $(anchor).attr('rel', 'group');
 
     if (this.isSmallScreenDevice) {
@@ -59,7 +60,7 @@ require(["jquery", "lazyload", "masonry", "fancybox"], function($, lazyload, Mas
   }
 
   Application.prototype.createImageElement = function(photo) {
-    var image = document.createElement("img");
+    var image = document.createElement('img');
     $(image).width(photo.width);
     $(image).height(photo.height);
     $(image).addClass('lazy');
