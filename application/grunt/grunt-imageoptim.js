@@ -9,9 +9,8 @@ module.exports = function(grunt) {
         quitAfter:                true
       },
       src: [
-        'assets/photos/small/*.jpg',
-        'assets/photos/medium/*.jpg',
-        'assets/photos/large/*.jpg'
+        'assets/photos/**/*.jpg',
+        '!assets/photos/originals/*.jpg'
       ]
     }
   });

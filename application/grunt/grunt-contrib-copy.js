@@ -11,6 +11,11 @@ module.exports = function(grunt) {
           dest:                   'dist/',
           filter:                 'isFile'
         },
+        {
+          expand:                 true,
+          src:                    ['assets/photos/**', '!assets/photos/originals', '!assets/photos/originals/*'],
+          dest:                   'dist/',
+        },
       ]
     }
   });

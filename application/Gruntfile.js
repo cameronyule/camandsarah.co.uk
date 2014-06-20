@@ -9,11 +9,11 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build',
     'Build site files for testing or deployment.',
-    ['clean', 'requirejs', 'cssmin', 'compress', 'copy']);
+    ['clean:build', 'requirejs', 'cssmin', 'compress', 'copy']);
 
   grunt.registerTask('photos',
     'Resize, optimise and build database of your source images.',
-    ['responsive_images', 'imageoptim', 'photo_database']);
+    ['clean:photos', 'responsive_images', 'imageoptim', 'photo_database']);
 
   grunt.registerTask('default', ['build']);
 };
