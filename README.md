@@ -32,8 +32,8 @@ You should now be able to access a local copy of the site:
 
 ## Deployment
 
-TODO
+Build an optimised, deployment-ready, version of the site with the following task:
 
-## Development
+  `grunt build`
 
-TODO
+Then upload the contents of the `dist` directory to your web server.
