@@ -5,12 +5,29 @@
 
     <meta charset="utf-8" />
     <meta name="robots" content="noindex">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
 
-    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-    <link href="/assets/stylesheets/reset.css" rel="stylesheet" type="text/css" />
-    <link href="/bower_components/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+
+    <!--(if target dev)><!-->
+      <link href="/assets/stylesheets/reset.css" rel="stylesheet" type="text/css" />
+      <link href="/bower_components/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+      <link href="/assets/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <!--<!(endif)-->
+    <!--(if target dist)>
+      <link href="/assets/optimized.css" rel="stylesheet" type="text/css" />
+    <!(endif)-->
+
+    <!--[if lt IE 9]>
+      <script src="/assets/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!--(if target dev)><!-->
+        <script data-main="/assets/javascripts/application" src="/bower_components/requirejs/require.js"></script>
+    <!--<!(endif)-->
+    <!--(if target dist)>
+      <script src="/assets/optimized.js" async></script>
+    <!(endif)-->
   </head>
   <body>
     <div id="container">
@@ -22,16 +39,29 @@
       <div id="photos">
         <noscript>
           <!-- Cherry-picked subset of images as fallback content -->
-          <!-- <a href=""><img src="" /></a> -->
+          <a href="/assets/photos/large/S&amp;C-YULE-002.jpg"><img src="/assets/photos/small/S&amp;C-YULE-002.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-003.jpg"><img src="/assets/photos/small/S&amp;C-YULE-003.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-014.jpg"><img src="/assets/photos/small/S&amp;C-YULE-014.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-067.jpg"><img src="/assets/photos/small/S&amp;C-YULE-067.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-080.jpg"><img src="/assets/photos/small/S&amp;C-YULE-080.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-088.jpg"><img src="/assets/photos/small/S&amp;C-YULE-088.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-095.jpg"><img src="/assets/photos/small/S&amp;C-YULE-095.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-139.jpg"><img src="/assets/photos/small/S&amp;C-YULE-139.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-148.jpg"><img src="/assets/photos/small/S&amp;C-YULE-148.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-168.jpg"><img src="/assets/photos/small/S&amp;C-YULE-168.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-170.jpg"><img src="/assets/photos/small/S&amp;C-YULE-170.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-183.jpg"><img src="/assets/photos/small/S&amp;C-YULE-183.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-189.jpg"><img src="/assets/photos/small/S&amp;C-YULE-189.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-200.jpg"><img src="/assets/photos/small/S&amp;C-YULE-200.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-225.jpg"><img src="/assets/photos/small/S&amp;C-YULE-225.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-257.jpg"><img src="/assets/photos/small/S&amp;C-YULE-257.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-360.jpg"><img src="/assets/photos/small/S&amp;C-YULE-360.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-327.jpg"><img src="/assets/photos/small/S&amp;C-YULE-327.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-497.jpg"><img src="/assets/photos/small/S&amp;C-YULE-497.jpg" /></a>
+          <a href="/assets/photos/large/S&amp;C-YULE-531.jpg"><img src="/assets/photos/small/S&amp;C-YULE-531.jpg" /></a>
         </noscript>
       </div>
     </div>
-
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/jquery.lazyload/jquery.lazyload.min.js"></script>
-    <script src="/bower_components/masonry/dist/masonry.pkgd.min.js"></script>
-    <script src="/bower_components/fancybox/source/jquery.fancybox.pack.js"></script>
-    <script src="assets/javascripts/application.js"></script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -41,7 +71,6 @@
 
       ga('create', 'UA-288967-5', 'camandsarah.co.uk');
       ga('send', 'pageview');
-
     </script>
   </body>
 </html>
