@@ -9,17 +9,16 @@ module.exports = function(grunt) {
       files: [
         {
           expand:                 true,
-          src:                    'dist/optimized.js',
+          src:                    'dist/assets/optimized.js',
           ext:                    '.gz.js'
         },
         {
           expand:                 true,
-          src:                    'dist/optimized.css',
+          src:                    'dist/assets/optimized.css',
           ext:                    '.gz.css'
         },
         {
           expand:                 true,
-          flatten:                true,
           src:                    'assets/data/photos.json',
           dest:                   'dist/',
           ext:                    '.gz.json'

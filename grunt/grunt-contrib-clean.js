@@ -3,11 +3,11 @@ module.exports = function(grunt) {
 
   grunt.config('clean', {
     build: {
-      src:                    'dist/',
+      src:                      'dist/',
     },
     photos: {
       options: {
-        // 'no-write': true,
+        // 'no-write':             true,
       },
       files: [{
         expand:                 true,
