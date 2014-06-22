@@ -15,7 +15,7 @@
       <link href="/assets/stylesheets/application.css" rel="stylesheet" type="text/css" />
     <!--<!(endif)-->
     <!--(if target dist)>
-      <link href="/assets/optimized.css" rel="stylesheet" type="text/css" />
+      <link href="/assets/optimized.gz.css" rel="stylesheet" type="text/css" />
     <!(endif)-->
 
     <!--[if lt IE 9]>
@@ -23,10 +23,13 @@
     <![endif]-->
 
     <!--(if target dev)><!-->
-        <script data-main="/assets/javascripts/application" src="/bower_components/requirejs/require.js"></script>
+      <script type="text/javascript">
+        var DEVELOPMENT=true;
+      </script>
+      <script data-main="/assets/javascripts/application" src="/bower_components/requirejs/require.js"></script>
     <!--<!(endif)-->
     <!--(if target dist)>
-      <script src="/assets/optimized.js" async></script>
+      <script src="/assets/optimized.gz.js" async></script>
     <!(endif)-->
   </head>
   <body>
