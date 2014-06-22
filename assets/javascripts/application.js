@@ -25,7 +25,15 @@ require(['jquery', 'masonry', 'lazyload', 'fancybox', 'bind'], function($, Mason
   }
 
   Application.prototype.loadPhotoDatabase = function() {
-    $.getJSON('assets/data/photos.json', this.onPhotoDatabaseLoaded.bind(this));
+    var photoDatabase = 'assets/data/';
+
+    if (typeof DEVELOPMENT === "undefined") {
+      photoDatabase += 'photos.gz.json';
+    } else {
+      photoDatabase += 'photos.json';
+    }
+
+    $.getJSON(photoDatabase, this.onPhotoDatabaseLoaded.bind(this));
   }
 
   Application.prototype.onPhotoDatabaseLoaded = function(data) {

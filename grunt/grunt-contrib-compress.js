@@ -9,6 +9,11 @@ module.exports = function(grunt) {
       files: [
         {
           expand:                 true,
+          src:                    'dist/index.html',
+          ext:                    '.gz.html'
+        },
+        {
+          expand:                 true,
           src:                    'dist/assets/optimized.js',
           ext:                    '.gz.js'
         },
