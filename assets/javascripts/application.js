@@ -1,4 +1,5 @@
 require.config({
+  baseUrl:                  '/bower_components/',
   paths: {
     jquery:                 'jquery/dist/jquery',
     lazyload:               'jquery.lazyload/jquery.lazyload',
