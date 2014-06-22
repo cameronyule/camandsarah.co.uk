@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build',
     'Build optimised version of the site for deployment.',
-    ['clean:build', 'requirejs', 'cssmin', 'compress', 'copy', 'targethtml', 'htmlmin']);
+    ['clean:build', 'requirejs', 'cssmin', 'copy', 'targethtml', 'htmlmin', 'compress']);
 
   grunt.registerTask('default', ['build']);
 };
