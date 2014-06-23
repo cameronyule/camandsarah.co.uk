@@ -75,3 +75,13 @@ header p {
     margin-bottom: 5px;
   }
 }
+
+#unsupported-ie p,
+#noscript p {
+  margin-bottom: 20px;
+}
+#unsupported-ie img,
+#noscript img {
+  text-align: center;
+  display: block;
+}

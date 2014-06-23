@@ -6,10 +6,14 @@ require.config({
     masonry:                'masonry/masonry',
     fancybox:               'fancybox/source/jquery.fancybox',
     bind:                   '../assets/javascripts/function.bind.polyfill'
+  },
+  shim: {
+    "lazyload": ["jquery"],
+    "fancybox": ["jquery"]
   }
 });
 
-require(['jquery', 'masonry', 'lazyload', 'fancybox', 'bind'], function($, Masonry) {
+require(['jquery', 'masonry', 'lazyload', 'fancybox', 'bind'], function(jQuery, Masonry) {
 
   function Application() {
     this.isSmallScreenDevice = false;
